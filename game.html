@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+</head>
+<body>
+    <h1>Press F5 to start a new game</h1>
+<script>
+
+    // intro and asking the name
+    var name = prompt('Hello stranger!\nLet\'s play the game!\nWhat\'s your name?');
+    if (name === 'null') {
+        alert('Hello the one who pressed to cancel :)');
+        name = 'stranger';
+    } else if (name === '') {
+        alert('Hello stranger with no name!');
+        name = 'stranger';
+    }
+    else {name = name[0].toUpperCase() + name.slice(1);
+        alert('Hello ' + name + '!')}
+
+    // do you like cats question
+    var likesCats = confirm('Do you like cats, ' + name + '?');
+    if (likesCats) {
+        alert('You\'re a nice cat! ^_^');
+    } else {
+        alert('Okay, it\'s not a problem.');
+    }
+
+    // showing rules
+    alert('Hangman.\nRules are simple.\nYou have 5 attempts to guess an animal by entering letters.')
+
+    // an array with all available words
+    var words = [
+        "Aardvark",
+        "Albatross",
+        "Alligator",
+        "Alpaca",
+        "Ant",
+        "Anteater",
+        "Antelope",
+        "Ape",
+        "Armadillo",
+        "Donkey",
+        "Baboon",
+        "Badger",
+        "Barracuda",
+        "Bat",
+        "Bear",
+        "Beaver",
+        "Bee",
+        "Bison",
+        "Boar",
+        "Buffalo",
+        "Butterfly",
+        "Camel",
+        "Capybara",
+        "Caribou",
+        "Cassowary",
+        "Cat",
+        "Caterpillar",
+        "Cattle",
+        "Chamois",
+        "Cheetah",
+        "Chicken",
+        "Chimpanzee",
+        "Chinchilla",
+        "Chough",
+        "Clam",
+        "Cobra",
+        "Cockroach",
+        "Cod",
+        "Cormorant",
+        "Coyote",
+        "Crab",
+        "Crane",
+        "Crocodile",
+        "Crow",
+        "Curlew",
+        "Deer",
+        "Dinosaur",
+        "Dog",
+        "Dogfish",
+        "Dolphin",
+        "Dotterel",
+        "Dove",
+        "Dragonfly",
+        "Duck",
+        "Dugong",
+        "Dunlin",
+        "Eagle",
+        "Echidna",
+        "Eel",
+        "Eland",
+        "Elephant",
+        "Elk",
+        "Emu",
+        "Falcon",
+        "Ferret",
+        "Finch",
+        "Fish",
+        "Flamingo",
+        "Fly",
+        "Fox",
+        "Frog",
+        "Gaur",
+        "Gazelle",
+        "Gerbil",
+        "Giraffe",
+        "Gnat",
+        "Gnu",
+        "Goat",
+        "Goldfinch",
+        "Goldfish",
+        "Goose",
+        "Gorilla",
+        "Goshawk",
+        "Grasshopper",
+        "Grouse",
+        "Guanaco",
+        "Gull",
+        "Hamster",
+        "Hare",
+        "Hawk",
+        "Hedgehog",
+        "Heron",
+        "Herring",
+        "Hippopotamus",
+        "Hornet",
+        "Horse",
+        "Human",
+        "Hummingbird",
+        "Hyena",
+        "Ibex",
+        "Ibis",
+        "Jackal",
+        "Jaguar",
+        "Jay",
+        "Jellyfish",
+        "Kangaroo",
+        "Kingfisher",
+        "Koala",
+        "Kookabura",
+        "Kouprey",
+        "Kudu",
+        "Lapwing",
+        "Lark",
+        "Lemur",
+        "Leopard",
+        "Lion",
+        "Llama",
+        "Lobster",
+        "Locust",
+        "Loris",
+        "Louse",
+        "Lyrebird",
+        "Magpie",
+        "Mallard",
+        "Manatee",
+        "Mandrill",
+        "Mantis",
+        "Marten",
+        "Meerkat",
+        "Mink",
+        "Mole",
+        "Mongoose",
+        "Monkey",
+        "Moose",
+        "Mosquito",
+        "Mouse",
+        "Mule",
+        "Narwhal",
+        "Newt",
+        "Nightingale",
+        "Octopus",
+        "Okapi",
+        "Opossum",
+        "Oryx",
+        "Ostrich",
+        "Otter",
+        "Owl",
+        "Oyster",
+        "Panther",
+        "Parrot",
+        "Partridge",
+        "Peafowl",
+        "Pelican",
+        "Penguin",
+        "Pheasant",
+        "Pig",
+        "Pigeon",
+        "Pony",
+        "Porcupine",
+        "Porpoise",
+        "Quail",
+        "Quelea",
+        "Quetzal",
+        "Rabbit",
+        "Raccoon",
+        "Rail",
+        "Ram",
+        "Rat",
+        "Raven",
+        "Reindeer",
+        "Rhinoceros",
+        "Rook",
+        "Salamander",
+        "Salmon",
+        "Sandpiper",
+        "Sardine",
+        "Scorpion",
+        "Seahorse",
+        "Seal",
+        "Shark",
+        "Sheep",
+        "Shrew",
+        "Skunk",
+        "Snail",
+        "Snake",
+        "Sparrow",
+        "Spider",
+        "Spoonbill",
+        "Squid",
+        "Squirrel",
+        "Starling",
+        "Stingray",
+        "Stinkbug",
+        "Stork",
+        "Swallow",
+        "Swan",
+        "Tapir",
+        "Tarsier",
+        "Termite",
+        "Tiger",
+        "Toad",
+        "Trout",
+        "Turkey",
+        "Turtle",
+        "Viper",
+        "Vulture",
+        "Wallaby",
+        "Walrus",
+        "Wasp",
+        "Weasel",
+        "Whale",
+        "Wildcat",
+        "Wolf",
+        "Wolverine",
+        "Wombat",
+        "Woodcock",
+        "Woodpecker",
+        "Worm",
+        "Wren",
+        "Yak",
+        "Zebra"
+    ];
+
+    // choosing a random word
+    var word = words[Math.floor(Math.random() * words.length)].toUpperCase();
+
+    // converting answer to underscores
+    var answerArray = [];
+    for (var y = 0; y < word.length; y++) {
+        answerArray[y] = '_';
+    }
+
+    // just for debugging
+     console.log(answerArray);
+     console.log(word);
+
+    // setting remaining attempts
+    var remainingAttempts = 5;
+
+    // setting the remaining letters
+    var remainingLetters = word.length;
+
+    // setting a cycle to continue till the word is guessed
+    while (remainingLetters > 0) {
+
+        // ending the game if no attempts left
+        if (remainingAttempts === 0) {
+            break;
+
+        } else {
+
+            // showing the status of the game
+            alert('Remaining attempts: ' + remainingAttempts + '\nThe word: ' + answerArray.join(' '));
+
+            // asking for a letter
+            var guess = prompt('Guess a letter or press \'Cancel\' to leave').toUpperCase();
+
+            // leaving the game if clicked to cancel
+            if (guess === null) {
+                break;
+
+            // if user enters non a char
+            } else if (guess.length !== 1) {
+                alert('Please enter the only one letter.');
+
+            // running if user filled in a char
+            } else {
+
+                //checking already guessed letters
+                var canContinue = answerArray.includes(guess);
+                if (canContinue) {
+                    alert('You\'ve already entered this letter.');
+                    continue;
+                }
+
+                // var to consider if we need to subtract remaining attempts
+                var remainingAttemptsSkip = 0;
+
+                // checking if there is a char in the word-array and refreshing the status of the game
+                for (var j = 0; j < word.length; j++) {
+                    if (word[j] === guess) {
+                        answerArray[j] = guess;
+                        remainingLetters--;
+
+                        // preventing to subtract remaining attempts
+                        remainingAttemptsSkip++;
+                    }
+                }
+
+                // checking if the entered char is not in the word and subtracting remaining attempts
+                if (remainingAttemptsSkip < 1) {
+                    remainingAttempts--;
+                }
+            }}
+
+    }
+
+    // showing the answer and congrats
+    if (remainingLetters === 0) {
+        alert(answerArray.join(" "));
+        alert('Excellent!\nYou won!\nThe word is ' + word + '!');
+
+    // running if a non-guessed letter left in the array
+    } else {alert('Unfortunately you have failed.\nThe word was: '
+        + word.toUpperCase()
+        + '. You\'re welcome to press F5 to start a new game.')}
+
+
+</script>
+</body>
+</html>

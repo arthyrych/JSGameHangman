@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite websites</title>
+</head>
+
+<body>
+    <h1>My websites</h1>
+    <p>Google Drive to save files in a cloud - <a href="https://drive.google.com/" title="FB">click here</a></p>
+    <p>Facebook jusMt for fun - <a href="https://facebook.com/" title="GD">click here</a></p>
+    <p>W3Schools for some useful tips - <a href="https://w3schools.com/" title="W3S">click here</a></p>
+<script>
+
+    //some code for git
+
+
+    // just some samples with if and else
+    var message = 'Hello world!';
+    console.log(message);
+    var names = 'Artem';
+    console.log('Hello ' + names);
+    if (names.length > 10) {
+        console.log('You\'re having a long name!');
+    } else {
+        console.log('You\'re having a nice name!');
+    }
+
+    // order in the restaurant with if, else if and else
+    var lemonChicken = false;
+    var beefWithBlackBean = false;
+    var sweetAndSourPork = false;
+    if (lemonChicken) {
+        console.log('Great! Gonna take chicken!');
+    } else if (beefWithBlackBean) {
+        console.log('Okay, let\'s try your beef.');
+    } else if (sweetAndSourPork) {
+        console.log('Hm, I\'ll order pork...');
+    } else {
+        console.log('Seriously? Okay, give me some rice...');
+    }
+
+
+    // random insult code version 1.2 with concat
+
+    function generateRandomInsult() {
+
+        // arrays with words
+        var randomBodyParts = ['face', 'body', 'brain', 'nose'];
+        var randomAdjectives = ['tiny', 'awful', 'dirty', 'ugly'];
+        var randomAnimalParts = ['penis', 'vagina', 'asshole'];
+        var randomAnimals = ['a monkey', 'an elephant', 'a cat', 'a dog'];
+
+        // a function to pick a random word
+        function randomWord(words) {
+            return words[Math.floor(Math.random() * words.length)];
+        }
+
+        // building a final phrase
+        var finalPhrase = 'Your ' + randomWord(randomBodyParts) + ' is even more ' + randomWord(randomAdjectives)
+            + ' than ' + randomWord(randomAnimals) + '\'s ' + randomWord(randomAnimalParts) + '!!!';
+        console.log(finalPhrase);
+    }
+
+    generateRandomInsult();
+
+    //returning fifth letter
+    function fifthLetter (name) {
+        if (name.length < 5) {
+            return;
+        } else {
+            console.log('The fifth letter in your name is ' + name[4] + '.');
+        }
+    }
+
+    fifthLetter('Art');
+
+/*
+
+    // sheep counter with while
+    var sheepCounted = 0;
+    while (sheepCounted <= 5) {
+        console.log('Sheep counted: ' + sheepCounted + '!');
+        sheepCounted++;
+    }
+    console.log('Good night..Z-z-z-z-z-z-z-z-z...');
+
+
+    // sheep counter with for
+    for (var sheepCounted1 = 0; sheepCounted1 <= 5; sheepCounted1++) {
+        console.log('Counted: ' + sheepCounted1);
+    }
+    console.log('Z-z-z-z-z-z-zzz...')
+
+
+    // for with an array
+    var animals = ['a lion', 'an elephant', 'a flamingo', 'a crocodile', 'a monkey'];
+    for (var y = 0; y < animals.length; y++) {
+        console.log('In our zoo we have ' + animals[y] + '.');
+    }
+
+
+    // another example for with a string
+    var name1 = 'Artem';
+    for (var i = 0; i < name1.length; i++) {
+        console.log('In my name there is a letter ' + name1[i].toUpperCase() + ' .');
+    }
+
+
+    // for with 2**
+    for (var x = 2; x < 10000; x = x * 2) {
+        console.log(x);
+    }
+
+
+    // for with 3**
+    for (var t = 3; t < 10000; t = t * 3) {
+        console.log(t)
+    }
+
+
+    // while with 3**
+    var z = 3;
+    while (z < 10000) {
+        console.log(z);
+        z = z * 3
+    }
+
+
+    // adding string to every index in an array
+    var animals = ['Cats', 'Dogs', 'Dolphins', 'Owls', 'Lions'];
+    for (var o = 0; o < animals.length; o++) {
+        animals[o] = animals[o] + ' are very beautiful!'
+    }
+    console.log(animals)
+
+
+    // generating a random string
+    var alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*';
+    var randomString = '';
+    while (randomString.length < 20) {
+        randomString += alphabet[Math.floor(Math.random() * alphabet.length)]
+    }
+    console.log(randomString);
+
+
+    // converting a string
+    var input = 'javascript is awesome';
+    var output = '';
+    for (var f = 0; f < input.length; f++) {
+        if (input[f] === 'a') {
+            output += 4
+        } else if (input[f] === 'e') {
+            output += 3
+        } else if (input[f] === 'i') {
+            output += 1
+        } else if (input[f] === 'o') {
+            output += 0
+        } else {
+            output += input[f]
+        }
+    }
+    console.log(output)
+*/
+
+</script>
+</body>
+</html>
