@@ -63,14 +63,17 @@
 
     //returning fifth letter
     function fifthLetter (name) {
+
+        // length check
         if (name.length < 5) {
             return;
-        } else {
-            console.log('The fifth letter in your name is ' + name[4] + '.');
         }
+
+        // the outgoing result if check is passed
+        return 'The fifth letter in your name is ' + name[4].toUpperCase() + '.';
     }
 
-    fifthLetter('Art');
+    fifthLetter('Artem');
 
 /*
 
