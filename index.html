@@ -8,9 +8,31 @@
 <body>
     <h1>My websites</h1>
     <p>Google Drive to save files in a cloud - <a href="https://drive.google.com/" title="FB">click here</a></p>
-    <p>Facebook jusMt for fun - <a href="https://facebook.com/" title="GD">click here</a></p>
+    <p>Facebook just for fun - <a href="https://facebook.com/" title="GD">click here</a></p>
     <p>W3Schools for some useful tips - <a href="https://w3schools.com/" title="W3S">click here</a></p>
 <script>
+
+    // comparing arrays
+    function compareArrays(firstArray, secondArray) {
+        if (firstArray.length !== secondArray.length) {
+            console.log('Arrays have different length.');
+            console.log(firstArray, secondArray);
+            return;
+        } else {
+            for (var i = 0; i < firstArray.length; i++) {
+                if (firstArray[i] === secondArray[i]) {
+                    console.log('The ' + [i] + ' element is the same in both arrays!');
+                } else {
+                    console.log('Unfortunately the ' + [i] + ' element is not the same in both arrays...');
+                    console.log(firstArray, secondArray);
+                    return;
+                }
+            }
+        }
+        console.log(firstArray, secondArray);
+    }
+
+    compareArrays([1, 2, 3, 4], [1, 2, 3, 4]);
 
     // add function
     function add (a, b) {
@@ -23,7 +45,7 @@
     }
 
     //result 36325 * 9824 + 777
-    console.log(add(mult(36325, 9824), 777));
+    //console.log(add(mult(36325, 9824), 777));
 
     // just some samples with if and else
     var message = 'Hello world!';
@@ -73,20 +95,6 @@
     }
 
     generateRandomInsult();
-
-    //returning fifth letter
-    function fifthLetter (name) {
-
-        // length check
-        if (name.length < 5) {
-            return;
-        }
-
-        // the outgoing result if check is passed
-        return 'The fifth letter in your name is ' + name[4].toUpperCase() + '.';
-    }
-
-    fifthLetter('Artem');
 
 /*
 

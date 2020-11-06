@@ -1,1 +1,3 @@
-# let thisRepository = justForFun (please) {'don\'t take it seriously'}
+function justForFun </br> (thisRepository) {
+    'please don\'t take it seriously'
+   }
