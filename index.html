@@ -14,97 +14,63 @@
 
     // comparing arrays
     function compareArrays(firstArray, secondArray) {
+
+        // leaving if the arrays have different length
         if (firstArray.length !== secondArray.length) {
-            console.log('Arrays have different length.');
-            console.log(firstArray, secondArray);
-            return;
-        } else {
-            for (var i = 0; i < firstArray.length; i++) {
-                if (firstArray[i] === secondArray[i]) {
-                    console.log('The ' + [i] + ' element is the same in both arrays!');
-                } else {
-                    console.log('Unfortunately the ' + [i] + ' element is not the same in both arrays...');
-                    console.log(firstArray, secondArray);
-                    return;
-                }
+            return false;
+        }
+
+        // taking every element in the array
+        for (let i = 0; i < firstArray.length; i++) {
+
+            // leaving if the elements with the same index are different
+            if (firstArray[i] !== secondArray[i]) {
+                return false;
             }
         }
-        console.log(firstArray, secondArray);
+        // returning true if arrays have the same length and the same value for indexes
+        return true;
     }
 
-    compareArrays([1, 2, 3, 4], [1, 2, 3, 4]);
-
-    // add function
-    function add (a, b) {
-        return a + b;
-    }
-
-    // multiply function
-    function mult (x, y) {
-        return x * y;
-    }
-
-    //result 36325 * 9824 + 777
-    //console.log(add(mult(36325, 9824), 777));
-
-    // just some samples with if and else
-    var message = 'Hello world!';
-    console.log(message);
-    var names = 'Artem';
-    console.log('Hello ' + names);
-    if (names.length > 10) {
-        console.log('You\'re having a long name!');
-    } else {
-        console.log('You\'re having a nice name!');
-    }
-
-    // order in the restaurant with if, else if and else
-    var lemonChicken = false;
-    var beefWithBlackBean = false;
-    var sweetAndSourPork = false;
-    if (lemonChicken) {
-        console.log('Great! Gonna take chicken!');
-    } else if (beefWithBlackBean) {
-        console.log('Okay, let\'s try your beef.');
-    } else if (sweetAndSourPork) {
-        console.log('Hm, I\'ll order pork...');
-    } else {
-        console.log('Seriously? Okay, give me some rice...');
-    }
+    compareArrays([1, 2, 3], [1, 2, 3, 4]);
 
 
-    // random insult code version 1.2 with concat
-
+    // random insult
     function generateRandomInsult() {
 
         // arrays with words
-        var randomBodyParts = ['face', 'body', 'brain', 'nose'];
-        var randomAdjectives = ['tiny', 'awful', 'dirty', 'ugly'];
-        var randomAnimalParts = ['penis', 'vagina', 'asshole'];
-        var randomAnimals = ['a monkey', 'an elephant', 'a cat', 'a dog'];
+        let randomBodyParts = ['face', 'body', 'brain', 'nose'];
+        let randomAdjectives = ['tiny', 'awful', 'dirty', 'ugly'];
+        let randomAnimalParts = ['penis', 'vagina', 'asshole'];
+        let randomAnimals = ['a monkey', 'an elephant', 'a cat', 'a dog'];
 
-        // a function to pick a random word
+        // pick a random word
         function randomWord(words) {
             return words[Math.floor(Math.random() * words.length)];
         }
 
         // building a final phrase
-        var finalPhrase = 'Your ' + randomWord(randomBodyParts) + ' is even more ' + randomWord(randomAdjectives)
+        let finalPhrase = 'Your ' + randomWord(randomBodyParts) + ' is even more ' + randomWord(randomAdjectives)
             + ' than ' + randomWord(randomAnimals) + '\'s ' + randomWord(randomAnimalParts) + '!!!';
         console.log(finalPhrase);
     }
 
     generateRandomInsult();
 
-/*
+
 
     // sheep counter with while
-    var sheepCounted = 0;
-    while (sheepCounted <= 5) {
-        console.log('Sheep counted: ' + sheepCounted + '!');
-        sheepCounted++;
+    function sheepCounterWhile () {
+        let sheepCounted = 0;
+        while (sheepCounted < 1) {
+            console.log('Sheep counted: ' + sheepCounted + '!');
+            sheepCounted++;
+        }
+        console.log('Good night..Z-z-z-z-z-z-z-z-z...');
     }
-    console.log('Good night..Z-z-z-z-z-z-z-z-z...');
+
+    sheepCounterWhile();
+
 
 
     // sheep counter with for
@@ -114,19 +80,11 @@
     console.log('Z-z-z-z-z-z-zzz...')
 
 
-    // for with an array
-    var animals = ['a lion', 'an elephant', 'a flamingo', 'a crocodile', 'a monkey'];
-    for (var y = 0; y < animals.length; y++) {
-        console.log('In our zoo we have ' + animals[y] + '.');
-    }
 
 
-    // another example for with a string
-    var name1 = 'Artem';
-    for (var i = 0; i < name1.length; i++) {
-        console.log('In my name there is a letter ' + name1[i].toUpperCase() + ' .');
-    }
 
+
+    /*
 
     // for with 2**
     for (var x = 2; x < 10000; x = x * 2) {
@@ -146,14 +104,6 @@
         console.log(z);
         z = z * 3
     }
-
-
-    // adding string to every index in an array
-    var animals = ['Cats', 'Dogs', 'Dolphins', 'Owls', 'Lions'];
-    for (var o = 0; o < animals.length; o++) {
-        animals[o] = animals[o] + ' are very beautiful!'
-    }
-    console.log(animals)
 
 
     // generating a random string
