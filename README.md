@@ -1,1 +1,1 @@
-# just for fun
+# let thisRepository = justForFun (please) {'don\'t take it seriously'}
