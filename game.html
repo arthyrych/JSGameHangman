@@ -13,7 +13,7 @@
     intro(prompt('Hello stranger!\nLet\'s play the game!\nWhat\'s your name?'));
 
     // get a random word from and array in container.js
-    let word = getRndWord();
+    let word = getRdmWord();
 
     // converting answer to an array with underscores
     let answerArray = wordToUnderscores(word);
@@ -69,7 +69,7 @@
                 alert('Remaining attempts: ' + remainingAttempts + '\nThe word: ' + answerArray.join(' '));
 
                 // asking for a letter
-                let guess = prompt('Guess a letter or press \'Cancel\' to leave').toUpperCase();
+                let guess = prompt('Guess a letter or press \'Cancel\' to leave');
 
                 // leaving the game if clicked to cancel
                 if (guess === null) {
@@ -81,6 +81,9 @@
 
                     // running if user filled in a char
                 } else {
+
+                    // converting input to uppercase
+                    guess = guess.toUpperCase();
 
                     //checking already guessed letters
                     let canContinue = answerArray.includes(guess);
@@ -117,9 +120,10 @@
             alert('Excellent!\nYou won!\nThe word is ' + word + '!');
 
             // running if a non-guessed letter left in the array
-        } else {alert('Unfortunately you have failed.\nThe word was: '
-            + word.toUpperCase()
-            + '. You\'re welcome to press F5 to start a new game.')}
+        } else {
+            alert('Unfortunately you have failed.\nThe word was: ' + word.toUpperCase() +
+                '. You\'re welcome to press F5 to start a new game.');
+        }
     }
 
 
