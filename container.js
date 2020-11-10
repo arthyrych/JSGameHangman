@@ -1,5 +1,5 @@
 // choosing a random word
-function chooseRandomWord() {
+function getRndWord() {
     // an array with all available words
     let words = [
         "Aardvark",
