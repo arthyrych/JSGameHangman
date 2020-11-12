@@ -1,3 +1,5 @@
+alert('I love you, dupka <3')
+
 // init intro to ask the name and say hello
 intro(prompt('Hello stranger!\nLet\'s play the game!\nWhat\'s your name?'));
 
