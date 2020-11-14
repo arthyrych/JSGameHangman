@@ -5,19 +5,40 @@
     <title>Sample</title>
 </head>
 <body>
- <h1>Hello world!</h1>
- <p id='test'>This is the text before changes</p>
 
-<script>
+<h1>The header</h1>
+<p id='first'>The first paragraph</p>
+<p id='second'>The second paragraph</p>
+<p id='third'>The third paragraph</p>
 
-    // some DOM tests
-    function changeText() {
-        let a = document.getElementById('test');
-        a.innerHTML = 'The text was changed';
-    }
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 
-    changeText();
+    <script>
 
-</script>
+        $('h1').text('The text is fading out').fadeOut(3000).fadeIn(2000);
+        $('#third').slideUp(2000).slideDown(2000);
+
+        for (let i = 0; i < 3; i++) {
+            let hobby = 'hobby' + i;
+            $('body').append('<p>' + hobby + '</p>');
+        }
+
+        $("body").append("<p>New paragraph</p>");
+
+        // example with jquery
+        let newText = 'changed1';
+        $('#first').text(newText);
+
+
+        // some DOM tests
+        function changeText() {
+            let a = document.getElementById('second');
+            let b = 'changed2';
+            a.innerHTML = b;
+        }
+
+        changeText();
+
+    </script>
 </body>
 </html>
