@@ -19,6 +19,21 @@
 
     <script>
 
+        let friends = ['Yulia', 'Alex'];
+        for (let y = 0; y < friends.length; y++) {
+            $('body').append('<p>' + friends[y] + '</p>');
+        }
+
+        $('#firstHeader').text('My friends');
+        $('p').hide().fadeIn(5000);
+
+
+        for (let x = 0; x < 5; x++) {
+            let period = x * 1000;
+            $('#secondHeader').fadeOut(period).fadeIn(period);
+        }
+
+        /*
 
         for (let o = 0; o < 10; o++) {
             $('#firstHeader').fadeOut(3000);
@@ -55,6 +70,8 @@
         }
 
         changeText();
+
+        */
 
     </script>
 </body>
