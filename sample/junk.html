@@ -18,13 +18,13 @@
 
     <script>
 
-        $('h1').fadeOut(3000);
-        $('h1').fadeIn(2000);
 
-
+        for (let o = 0; o < 10; o++) {
+            $('h1').fadeOut(3000);
+            $('h1').fadeIn(2000);
+        }
 
         
-
         for (let i = 0; i < 3; i++) {
             let hobby = 'hobby ' + i;
             $('body').append('<p>' + hobby + '</p>');
@@ -32,6 +32,7 @@
 
         $("body").append("<p id='new'>New paragraph</p>");
         $('#new').slideUp(2000).slideDown(4000);
+
 
         // example with jquery
         let newText = 'changed1';
