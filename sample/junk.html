@@ -19,41 +19,45 @@
 
     <script>
 
-        let friends = ['Yulia', 'Alex'];
-        for (let y = 0; y < friends.length; y++) {
-            $('body').append('<p>' + friends[y] + '</p>');
-        }
 
 
+        /*
+
+        // fading till the exact percent
+        $('#first').fadeTo(2000, 0.3);
+
+
+        // changing text
         $('#firstHeader').text('My friends');
-        $('p').hide().fadeIn(5000);
 
 
+        // blinking with pause and increasing interval
         for (let y = 0; y < 6; y++) {
             let pause = y * 1000;
-            $('#firstHeader').fadeOut(100).delay(pause).fadeIn(100);
+            $('#firstHeader').fadeOut(50).delay(pause).fadeIn(50);
         }
 
 
+        // fading with pause and increasing interval
         for (let x = 0; x < 11; x++) {
             let period = x * 1000;
             $('#secondHeader').fadeOut(period).fadeIn(period);
         }
 
-        /*
-
+        
+        // looping fade
         for (let o = 0; o < 10; o++) {
             $('#firstHeader').fadeOut(3000);
             $('#firstHeader').fadeIn(2000);
         }
 
-        
+        // looping sliding
         for (let o = 0; o < 10; o++) {
             $('#secondHeader').slideUp(3000);
             $('#secondHeader').slideDown(2000);
         }
 
-        
+        // adding several <p> through a loop
         for (let i = 0; i < 3; i++) {
             let hobby = 'hobby ' + i;
             $('body').append('<p>' + hobby + '</p>');
