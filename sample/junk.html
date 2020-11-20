@@ -24,11 +24,18 @@
             $('body').append('<p>' + friends[y] + '</p>');
         }
 
+
         $('#firstHeader').text('My friends');
         $('p').hide().fadeIn(5000);
 
 
-        for (let x = 0; x < 5; x++) {
+        for (let y = 0; y < 6; y++) {
+            let pause = y * 1000;
+            $('#firstHeader').fadeOut(100).delay(pause).fadeIn(100);
+        }
+
+
+        for (let x = 0; x < 11; x++) {
             let period = x * 1000;
             $('#secondHeader').fadeOut(period).fadeIn(period);
         }
