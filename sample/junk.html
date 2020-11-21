@@ -8,6 +8,7 @@
 
 <h1 id='firstHeader'>The first header</h1>
 <h1 id='secondHeader'>The second header</h1>
+<h2 id='thirdHeader'>The third header</h2>
 <p id='first'>The first paragraph</p>
 <p id='second'>The second paragraph</p>
 <p id='third'>The third paragraph</p>
@@ -63,7 +64,7 @@
             $('body').append('<p>' + hobby + '</p>');
         }
 
-
+        // adding a new <p> and sliding it through id
         $("body").append("<p id='new'>New paragraph</p>");
         $('#new').slideUp(2000).slideDown(4000);
 
@@ -73,7 +74,7 @@
         $('#first').text(newText);
 
 
-        // some DOM tests
+        // example with DOM
         function changeText() {
             let a = document.getElementById('second');
             let b = 'changed2';
