@@ -22,6 +22,25 @@
 
 
 
+
+        // example with interval
+        let timer = 5;
+
+        function printMessage () {
+            console.log('You\'re staring at console for ' + timer);
+            timer+=5;
+        }
+
+        setInterval(printMessage, 5000);
+
+        // example with timeout 
+        function timeUp () {
+            alert('Time is out!');
+        }
+
+        let timeoutId = setTimeout(timeUp, 10000);
+        clearTimeout(timeoutId);
+
         /*
 
         // fading till the exact percent
