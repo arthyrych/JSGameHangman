@@ -19,7 +19,7 @@
 
     <style>
     #container {
-      width: 200px;
+      width: 100px;
       height: 200px;
       background: green;
       position: relative;
@@ -42,20 +42,22 @@
 
         // example with animation
         let startPosition = 0;
+        let turner = false;
         let box = document.getElementById('box');
         let t = setInterval(move, 50);
 
 
         function move () {
-            if (startPosition >= 150) {
+            if (!turner) {
                 startPosition += 1;
-                box.style.right = startPosition + 'px';
-                // clearInterval(t);
-            } else {
-                startPosition += 1;
-                box.style.left = startPosition + 'px';
-            }
-            
+                if (startPosition >= 50)
+                    turner = true;
+            } else { 
+                startPosition -= 1;
+                if (startPosition <= 0)
+                    turner = false;
+                }
+            box.style.left = startPosition + 'px';
         }
 
 
