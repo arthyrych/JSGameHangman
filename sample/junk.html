@@ -48,7 +48,9 @@
 
         function move () {
             if (startPosition >= 150) {
-                clearInterval(t);
+                startPosition += 1;
+                box.style.right = startPosition + 'px';
+                // clearInterval(t);
             } else {
                 startPosition += 1;
                 box.style.left = startPosition + 'px';
