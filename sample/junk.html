@@ -20,8 +20,8 @@
 
     <style>
     #container {
-      width: 100px;
-      height: 200px;
+      width: 150px;
+      height: 50px;
       background: green;
       position: relative;
     }
@@ -50,13 +50,13 @@
         let startPosition = 0;
         let turner = false;
         let box = document.getElementById('box');
-        let t = setInterval(move, 5);
+        let t = setInterval(move, 10);
 
 
         function move () {
             if (!turner) {
                 startPosition += 1;
-                if (startPosition >= 50)
+                if (startPosition >= 100)
                     turner = true;
             } else { 
                 startPosition -= 1;
@@ -68,14 +68,14 @@
 
 
         // example with interval
-        let timer = 5;
+        let timer = 1;
 
         function printMessage () {
             console.log('You\'re staring at console for ' + timer);
-            timer+=5;
+            timer+=1;
         }
 
-        setInterval(printMessage, 5000);
+        setInterval(printMessage, 1000);
 
 
         // example with timeout 
