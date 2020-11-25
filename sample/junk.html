@@ -9,13 +9,21 @@
 <h1 id='firstHeader'>The first header</h1>
 <h1 id='secondHeader'>The second header</h1>
 <h2 id='thirdHeader'>The third header</h2>
-<button onclick="show()">Show time</button>
-<p id='first'>The first paragraph</p>
+<button id="firstBtn" onclick="show()">Show time</button>
+<button id="secondBtn" onclick="show()">Show time</button>
+<p id='first'>The page is opened 0 sec ago</p>
 <p id='second'>The second paragraph</p>
 <p id='third'>The third paragraph</p>
 <p id='fourth'>The fourth paragraph</p>
 <p id='fifth'>The fifth paragraph</p>
 <p id='sixth'>The sixth paragraph</p>
+
+<div>
+    <button> Prev </button>
+    <img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" 
+      width="200px" height="100px"/>
+    <button> Next </button>
+</div>
 
 
     <style>
@@ -40,6 +48,14 @@
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 
     <script>
+
+
+        // slider
+        let images = [
+        "http://www.sololearn.com/uploads/slider/1.jpg", 
+        "http://www.sololearn.com/uploads/slider/2.jpg", 
+        "http://www.sololearn.com/uploads/slider/3.jpg"
+        ];
 
         // example with button
         function show () {
@@ -71,7 +87,7 @@
         let timer = 1;
 
         function printMessage () {
-            console.log('You\'re staring at console for ' + timer);
+            $('#first').text('The page is opened ' + timer + ' sec ago');
             timer+=1;
         }
 
