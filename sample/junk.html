@@ -9,6 +9,7 @@
 <h1 id='firstHeader'>The first header</h1>
 <h1 id='secondHeader'>The second header</h1>
 <h2 id='thirdHeader'>The third header</h2>
+<button onclick="show()">Show time</button>
 <p id='first'>The first paragraph</p>
 <p id='second'>The second paragraph</p>
 <p id='third'>The third paragraph</p>
@@ -40,11 +41,16 @@
 
     <script>
 
+        // example with button
+        function show () {
+            alert(Date());
+        }
+
         // example with animation
         let startPosition = 0;
         let turner = false;
         let box = document.getElementById('box');
-        let t = setInterval(move, 50);
+        let t = setInterval(move, 5);
 
 
         function move () {
