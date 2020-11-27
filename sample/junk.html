@@ -50,10 +50,41 @@
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 
     <script>
+        
+        // 
 
+
+        //es6 functions
+        const greet = x => "Welcome " + x;
+
+
+        const add = (x, y) => {
+        let sum = x + y;  
+        console.log(sum);
+        }
+
+        add(5, 5);
+
+
+        //es6 for of example (with arrays)
+        let list = ["x", "y", "z"];
+        for (let val of list) {
+        console.log(val);
+        }
+
+
+        // es6 for in example (with objects)
+        let obj = {a: 1, b: 2, c: 3};
+        for (let v in obj) {
+        console.log(v);
+        }
+
+
+        // es6 using var in a string
         let name = 'David';
         let msg = `Welcome ${name}!`;
         console.log(msg);
+
 
         // form validation
         function validate() {
