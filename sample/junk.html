@@ -51,44 +51,18 @@
 
     <script>
         
-        let arr = ['1', '2', '3'];
-        let [one, two, three] = arr;
 
-        console.log(one); // 1
-        console.log(two); // 2
-        console.log(three); // 3
-
-
-        //es6 functions
-        const greet = x => "Welcome " + x;
-
-
-        const add = (x, y) => {
-        let sum = x + y;  
-        console.log(sum);
+        // another example with animation
+        let leftOfSet = 0;
+        function moveHeading () {
+            $('#secondHeader').offset( { left:leftOfSet } );
+            leftOfSet++;
+            if (leftOfSet > 200) {
+                leftOfSet = 0;
+            }
         }
 
-        add(5, 5);
-
-
-        //es6 for of example (with arrays)
-        let list = ["x", "y", "z"];
-        for (let val of list) {
-        console.log(val);
-        }
-
-
-        // es6 for in example (with objects)
-        let obj = {a: 1, b: 2, c: 3};
-        for (let v in obj) {
-        console.log(v);
-        }
-
-
-        // es6 using var in a string
-        let name = 'David';
-        let msg = `Welcome ${name}!`;
-        console.log(msg);
+        setInterval(moveHeading, 20);
 
 
         // form validation
