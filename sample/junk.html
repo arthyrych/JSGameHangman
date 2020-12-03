@@ -72,52 +72,43 @@
     <script>
         
 
+
+
         // another example with animation
-        let leftOfSet = 0;
+        let leftOfSet = 9;
+        let turner2 = false;
+
+
         function moveHeading () {
-            $('#secondHeader').offset( { left:leftOfSet } );
-            leftOfSet++;
-            if (leftOfSet > 200) {
-                leftOfSet = 0;
+            $('#box2').offset( { left : leftOfSet } );
+            if (!turner2) {
+                leftOfSet++;
+                if (leftOfSet >= 108) 
+                    turner2 = true;
+            } else {
+                leftOfSet--;
+                if (leftOfSet <= 8) 
+                    turner2 = false;
             }
-        }
+        }    
 
         setInterval(moveHeading, 20);
 
-
-        // form validation
-        function validate() {
-            var n1 = document.getElementById("num1");
-            var n2 = document.getElementById("num2");
-            if(n1.value != "" && n2.value != "") {
-                if(n1.value == n2.value) {
-                return true;
-                }
-            }   
-            alert("The values should be equal and not blank");
-            return false;
-        }
-
-
-        // example with button
-        function show () {
-            alert(Date());
-        }
 
         // example with animation
         let startPosition = 0;
         let turner = false;
         let box = document.getElementById('box');
-        let t = setInterval(move, 10);
+        let t = setInterval(move, 20);
 
 
         function move () {
             if (!turner) {
-                startPosition += 1;
+                startPosition++;
                 if (startPosition >= 100)
                     turner = true;
             } else { 
-                startPosition -= 1;
+                startPosition--;
                 if (startPosition <= 0)
                     turner = false;
             }
@@ -143,6 +134,27 @@
 
         let timeoutId = setTimeout(timeUp, 10000);
         clearTimeout(timeoutId);
+
+
+        // form validation
+        function validate() {
+            var n1 = document.getElementById("num1");
+            var n2 = document.getElementById("num2");
+            if(n1.value != "" && n2.value != "") {
+                if(n1.value == n2.value) {
+                return true;
+                }
+            }   
+            alert("The values should be equal and not blank");
+            return false;
+        }
+
+
+        // example with button
+        function show () {
+            alert(Date());
+        }
+
 
         /*
 
