@@ -72,9 +72,15 @@
     <script>
         
 
+        // click event
+        function clickEvent (event) {
+            console.log('Click! ' + event.pageX + ' ' + event.pageY);
+        }
+
+        $('h1').click(clickEvent);
 
 
-        // another example with animation
+        // another example with animation using jquery
         let leftOfSet = 9;
         let turner2 = false;
 
@@ -138,8 +144,8 @@
 
         // form validation
         function validate() {
-            var n1 = document.getElementById("num1");
-            var n2 = document.getElementById("num2");
+            let n1 = document.getElementById("num1");
+            let n2 = document.getElementById("num2");
             if(n1.value != "" && n2.value != "") {
                 if(n1.value == n2.value) {
                 return true;
@@ -150,7 +156,7 @@
         }
 
 
-        // example with button
+        // example with time button
         function show () {
             alert(Date());
         }
