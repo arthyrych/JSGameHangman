@@ -75,6 +75,13 @@
 
 
 
+
+
+
+
+
+
+
         // mini-game
 
         // set the position of h1 horizontally
@@ -83,7 +90,11 @@
         let topOfSet = 0;
         // our adapter that will change the direction of h1     
         let adapter = 1;
-
+        // point counter
+        let counter = 0;
+        // h1 represents points
+        $('#firstHeader').text(counter)
+        
 
         function moveHeader () {
 
@@ -122,11 +133,18 @@
         }    
 
         // set interval
-        let firstInterval = setInterval(moveHeader, 10);
+        let firstInterval = setInterval(moveHeader, 20);
 
         // stop on click
-        $('html').click (function myStopFunction () {
-            clearInterval(firstInterval);
+        $('#firstHeader').click (function myStopFunction () {
+            if (counter === 2) {
+                console.log('You won!');
+                clearInterval(firstInterval);
+            }
+            setInterval(moveHeader, 10);
+            counter++;
+            // h1 represents points
+            $('#firstHeader').text(counter); 
         });
 
 
