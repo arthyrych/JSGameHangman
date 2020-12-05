@@ -75,38 +75,67 @@
 
 
 
-        // another example with animation using jquery
+        // mini-game
+
+        // set the position of h1 horizontally
         let leftOfSet2 = 0;
+        // set the position of h1 vertically
         let topOfSet = 0;
+        // our adapter that will change the direction of h1     
         let adapter = 1;
 
 
         function moveHeader () {
+
+            // moving h1 right
             if (adapter === 1) {
                 $('#firstHeader').offset( { left : leftOfSet2 } );
                 leftOfSet2++;
+                // check to change ${adapter}
                 if (leftOfSet2 >= 200) 
                     adapter = 2;
+            
+            // moving h1 down
             } else if (adapter === 2) {
                 $('#firstHeader').offset( { top : topOfSet } );
                 topOfSet++;
+                // check to change ${adapter}
                 if (topOfSet >= 200)
                     adapter = 3;
+
+            // moving h1 left     
             } else if (adapter === 3) {
                 $('#firstHeader').offset( { left : leftOfSet2 } );
                 leftOfSet2--;
+                // check to change ${adapter}
                 if (leftOfSet2 <= 0) 
                     adapter = 4;
+
+            // moving h1 up      
             } else {
                 $('#firstHeader').offset( { top : topOfSet } );
                 topOfSet--;
-                if (topOfSet <= 200)
+                // check to change ${adapter}
+                if (topOfSet <= 0)
                     adapter = 1;
             }
         }    
 
-        setInterval(moveHeader, 10);
+        // set interval
+        let firstInterval = setInterval(moveHeader, 10);
 
+        // stop on click
+        $('html').click (function myStopFunction () {
+            clearInterval(firstInterval);
+        });
+
+
+
+
+
+
+
+        /*
         
         // mousemove event
         $('html').click(function (event) {
@@ -116,6 +145,7 @@
             });
         });
 
+        */
 
         // click event
         function clickEvent (event) {
