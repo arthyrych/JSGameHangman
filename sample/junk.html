@@ -72,6 +72,16 @@
     <script>
         
 
+        // mousemove event
+        $('html').mousemove(function (event) {
+            $('#firstHeader').offset( {
+                left : event.pageX,
+                top : event.pageY
+            });
+        });
+
+
+
         // click event
         function clickEvent (event) {
             console.log('Click! ' + event.pageX + ' ' + event.pageY);
@@ -98,7 +108,7 @@
             }
         }    
 
-        setInterval(moveHeading, 20);
+        setInterval(moveHeading, 10);
 
 
         // example with animation
