@@ -77,19 +77,31 @@
 
         // another example with animation using jquery
         let leftOfSet2 = 0;
-        let turner22 = false;
+        let topOfSet = 0;
+        let adapter = 1;
 
 
         function moveHeader () {
-            $('#secondHeader').offset( { left : leftOfSet2 } );
-            if (!turner22) {
+            if (adapter === 1) {
+                $('#firstHeader').offset( { left : leftOfSet2 } );
                 leftOfSet2++;
                 if (leftOfSet2 >= 200) 
-                    turner22 = true;
-            } else {
+                    adapter = 2;
+            } else if (adapter === 2) {
+                $('#firstHeader').offset( { top : topOfSet } );
+                topOfSet++;
+                if (topOfSet >= 200)
+                    adapter = 3;
+            } else if (adapter === 3) {
+                $('#firstHeader').offset( { left : leftOfSet2 } );
                 leftOfSet2--;
                 if (leftOfSet2 <= 0) 
-                    turner22 = false;
+                    adapter = 4;
+            } else {
+                $('#firstHeader').offset( { top : topOfSet } );
+                topOfSet--;
+                if (topOfSet <= 200)
+                    adapter = 1;
             }
         }    
 
