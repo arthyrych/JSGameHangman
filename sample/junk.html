@@ -67,10 +67,33 @@
            <div id="box2"> </div>
         </div>
 
+
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 
     <script>
         
+
+
+
+        // another example with animation using jquery
+        let leftOfSet2 = 0;
+        let turner22 = false;
+
+
+        function moveHeader () {
+            $('#secondHeader').offset( { left : leftOfSet2 } );
+            if (!turner22) {
+                leftOfSet2++;
+                if (leftOfSet2 >= 200) 
+                    turner22 = true;
+            } else {
+                leftOfSet2--;
+                if (leftOfSet2 <= 0) 
+                    turner22 = false;
+            }
+        }    
+
+        setInterval(moveHeader, 10);
 
         
         // mousemove event
@@ -95,7 +118,7 @@
         let turner2 = false;
 
 
-        function moveHeading () {
+        function moveBox () {
             $('#box2').offset( { left : leftOfSet } );
             if (!turner2) {
                 leftOfSet++;
@@ -108,7 +131,7 @@
             }
         }    
 
-        setInterval(moveHeading, 10);
+        setInterval(moveBox, 10);
 
 
         // example with animation
