@@ -137,14 +137,14 @@
 
         // stop on click
         $('#firstHeader').click (function myStopFunction () {
-            if (counter === 2) {
-                console.log('You won!');
-                clearInterval(firstInterval);
-            }
             setInterval(moveHeader, 10);
             counter++;
             // h1 represents points
             $('#firstHeader').text(counter); 
+            if (counter >= 2) {
+                console.log('You won!');
+                clearInterval(firstInterval);
+            }
         });
 
 
