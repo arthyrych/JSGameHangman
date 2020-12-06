@@ -92,6 +92,8 @@
         let adapter = 1;
         // point counter
         let counter = 0;
+        // interval
+        let interval = 40;
         // h1 represents points
         $('#firstHeader').text(counter)
         
@@ -133,11 +135,12 @@
         }    
 
         // set interval
-        let firstInterval = setInterval(moveHeader, 20);
+        let firstInterval = setInterval(moveHeader, interval);
 
         // stop on click
         $('#firstHeader').click (function myStopFunction () {
-            setInterval(moveHeader, 10);
+            interval /= 2;
+            firstInterval = setInterval(moveHeader, interval);
             counter++;
             // h1 represents points
             $('#firstHeader').text(counter); 
@@ -147,8 +150,10 @@
             }
         });
 
-
-
+ /*       $('#firstHeader').click (function myStopFunction () {
+                clearInterval(firstInterval);
+        }); 
+*/
 
 
 
