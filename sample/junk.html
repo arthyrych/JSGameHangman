@@ -6,8 +6,10 @@
 </head>
 <body>
 
-<h1 id='firstHeader'>The first header</h1>
-<h1 id='secondHeader'>The second header</h1>
+    <div id="box2"> </div>
+
+<h1 id='firstHeader'>Tap the box to start the game</h1>
+<h1 id='secondHeader'>Catch the number</h1>
 <h2 id='thirdHeader'>The third header</h2>
 <button id="firstBtn" onclick="show()">Show time</button>
 <button id="secondBtn" onclick="show()">Show time</button>
@@ -49,23 +51,15 @@
 
 
     <style>
-        #container2 {
-          width: 150px;
-          height: 50px;
-          background: green;
-          position: relative;
-        }
         #box2 {
           width: 50px;
           height: 50px;
           background: red;
-          position: absolute;
+          position: relative; 
         }
         </style>
     
-        <div id="container2">
-           <div id="box2"> </div>
-        </div>
+        
 
 
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
@@ -94,14 +88,13 @@
         let counter = 0;
         // interval
         let interval = 40;
-        // h1 represents points
-        $('#firstHeader').text(counter)
+        
         
 
         function moveHeader () {
 
 
-            // check the counter to stop movings
+            // check the counter to stop moving
             if (counter >= 3) {
                 clearInterval(firstInterval);
                 return;
@@ -109,7 +102,7 @@
 
             // moving h1 right
             if (adapter === 1) {
-                $('#firstHeader').offset( { left : leftOfSet2 } );
+                $('#box2').offset( { left : leftOfSet2 } );
                 leftOfSet2++;
                 // check to change ${adapter}
                 if (leftOfSet2 >= 200) 
@@ -117,7 +110,7 @@
             
             // moving h1 down
             } else if (adapter === 2) {
-                $('#firstHeader').offset( { top : topOfSet } );
+                $('#box2').offset( { top : topOfSet } );
                 topOfSet++;
                 // check to change ${adapter}
                 if (topOfSet >= 200)
@@ -125,7 +118,7 @@
 
             // moving h1 left     
             } else if (adapter === 3) {
-                $('#firstHeader').offset( { left : leftOfSet2 } );
+                $('#box2').offset( { left : leftOfSet2 } );
                 leftOfSet2--;
                 // check to change ${adapter}
                 if (leftOfSet2 <= 0) 
@@ -133,7 +126,7 @@
 
             // moving h1 up      
             } else {
-                $('#firstHeader').offset( { top : topOfSet } );
+                $('#box2').offset( { top : topOfSet } );
                 topOfSet--;
                 // check to change ${adapter}
                 if (topOfSet <= 0)
@@ -144,21 +137,16 @@
         // set interval
         let firstInterval = setInterval(moveHeader, interval);
 
-        // stop on click
-        $('#firstHeader').click (function myStopFunction () {
+        // increase h1 speed on click
+        $('#box2').click (function speedUp () {
             interval /= 2;
             firstInterval = setInterval(moveHeader, interval);
             counter++;
             // h1 represents points
-            $('#firstHeader').text(counter); 
-            
+            $('#box2').text(counter);
+            // h1 represents points
+            $('#firstHeader').text(counter) 
         });
-
- /*       $('#firstHeader').click (function myStopFunction () {
-                clearInterval(firstInterval);
-        }); 
-*/
-
 
 
 
@@ -182,6 +170,8 @@
         $('h1').click(clickEvent);
 
 
+        /*
+
         // another example with animation using jquery
         let leftOfSet = 9;
         let turner2 = false;
@@ -201,7 +191,7 @@
         }    
 
         setInterval(moveBox, 10);
-
+        */
 
         // example with animation
         let startPosition = 0;
