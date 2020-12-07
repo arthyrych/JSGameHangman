@@ -100,6 +100,13 @@
 
         function moveHeader () {
 
+
+            // check the counter to stop movings
+            if (counter >= 3) {
+                clearInterval(firstInterval);
+                return;
+            }
+
             // moving h1 right
             if (adapter === 1) {
                 $('#firstHeader').offset( { left : leftOfSet2 } );
@@ -144,10 +151,7 @@
             counter++;
             // h1 represents points
             $('#firstHeader').text(counter); 
-            if (counter >= 2) {
-                console.log('You won!');
-                clearInterval(firstInterval);
-            }
+            
         });
 
  /*       $('#firstHeader').click (function myStopFunction () {
