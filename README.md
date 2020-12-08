@@ -3,4 +3,4 @@ function justForFun (thisRepository) {</br>
     }
 
 Open the game here:
-https://arthyrych.github.io/js/
+https://arthyrych.github.io/hangman/
