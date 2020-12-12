@@ -1,2 +1,2 @@
-## In progress
-# Open the game here: https://arthyrych.github.io/hangman/
+# In progress
+## Open the game here: https://arthyrych.github.io/hangman/
