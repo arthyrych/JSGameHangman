@@ -1,35 +1,26 @@
-// init intro to ask the name and say hello
-intro(prompt('Hello stranger!\nLet\'s play the game!\nWhat\'s your name?'));
-
 // get a random word from and array in container.js
 let word = getRdmWord();
+
 
 // converting answer to an array with underscores
 let answerArray = wordToUnderscores(word);
 
+
 // setting the remaining letters
 let remainingLetters = word.length;
 
+
 // setting remaining attempts
 let remainingAttempts = 5;
+
 
 // just for debugging
 console.log(word);
 console.log(answerArray);
 
+
 // the main function after setting all preconditions
 theMain(remainingLetters, remainingAttempts);
-
-// intro and asking the name
-function intro (name) {
-    if (name === null) {
-        alert('Hello the one who pressed to cancel :)');
-    } else if (name === '') {
-        alert('Hello stranger with no name!');
-    }
-    else {name = name[0].toUpperCase() + name.slice(1);
-        alert('Hello ' + name + '!')}
-}
 
 
 // converting answer to underscores
@@ -55,7 +46,8 @@ function theMain (remainingLetters, remainingAttempts) {
         } else {
 
             // showing the status of the game
-            alert('Remaining attempts: ' + remainingAttempts + '\nThe word: ' + answerArray.join(' '));
+            $('#remainingAttempts').text('Remaining attempts: ' + remainingAttempts);
+            $('#word').text('The word: ' + answerArray.join(' '));
 
             // asking for a letter
             let guess = prompt('Guess a letter or press \'Cancel\' to leave');
@@ -105,12 +97,12 @@ function theMain (remainingLetters, remainingAttempts) {
 
     // showing the answer and congrats
     if (remainingLetters === 0) {
-        alert(answerArray.join(" "));
-        alert('Excellent!\nYou won!\nThe word is ' + word + '!');
+        $('#preStatus').text(answerArray.join(" "));
+        $('#status').text('Excellent!\nYou won!\nThe word is ' + word + '!');
 
         // running if a non-guessed letter left in the array
     } else {
-        alert('Unfortunately you have failed.\nThe word was: ' + word.toUpperCase() +
+        $('#status').text('Unfortunately you have failed.\nThe word was: ' + word.toUpperCase() +
             '. You\'re welcome to press F5 to start a new game.');
     }
 }

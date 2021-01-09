@@ -5,7 +5,20 @@
     <title>Hangman</title>
 </head>
 <body>
-    <h1 id="header1">Press F5 to start a new game</h1>
+    <h1 id="header1">Hangman</h1>
+    <h3 id='rules'>Rules: 1) There is a random animal 2) You need to guess letter by letter 3) You're having 5 attempts</h3>
+    <p id='remainingAttempts'></p>
+    <p id='word'></p>
+
+    <form action="/action_page.php">
+        <label for="gLetter">Guess letter:</label><br>
+        <input type="text" id="guessLetter" name="gLetter"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id='preStatus'></p>
+    <p id='status'></p>
+
 
     <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
     <script src="src/container.js"></script>
