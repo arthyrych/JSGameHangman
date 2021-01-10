@@ -29,7 +29,7 @@ function newGame () {
 newGame();
 
 
-$( "#guessButton" ).click(function() {
+$("#guessButton").click(function() {
     letterHandler($("#guessLetter").val());
     // clear input
     $('#guessLetter').val('');
@@ -55,9 +55,10 @@ function letterHandler (newLetter) {
     } else if (newLetter.length !== 1) {
 
         if (newLetter.toUpperCase() == word) {
+            writeFullWord();
             showWinMessage();
         } else {
-            alert('Please enter the only one letter or the entire word.');
+            alert('Please enter the only one letter or the correct entire word.');
         }
 
     } else {
@@ -94,6 +95,7 @@ function letterHandler (newLetter) {
         updateAttempts();
 
         if (remainingAttempts <= 0) {
+            writeFullWord();
             showFailMessage();
             return;
         }
@@ -102,6 +104,7 @@ function letterHandler (newLetter) {
 
         // showing the answer and congrats
         if (remainingLetters === 0) {
+            writeFullWord();
             showWinMessage();
         } 
     }   
@@ -127,8 +130,7 @@ function showRestartBtn () {
 
 function showFailMessage () {
     hideFieldLetter();
-    $('#status').text('Unfortunately you have failed.\nThe word was: ' + word.toUpperCase() +
-    '. You\'re welcome to press F5 to start a new game.');
+    $('#status').text('Unfortunately you have failed.\nThe word was: ' + word.toUpperCase() + '.');
     showRestartBtn();
 }
 
@@ -137,6 +139,16 @@ function showWinMessage () {
     $('#status').text('Excellent!\nYou won!\nThe word is ' + word + '!');
     showRestartBtn();
 }
+
+function writeFullWord () {
+    for (let y = 0; y < word.length; y++) {
+        answerArray[y] = word[y];
+    }
+
+    updatedWord();
+}
+
+
 
 /*
 // the main function once all preconditions are set
