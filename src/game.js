@@ -35,6 +35,7 @@ $("#guessButton").click(function() {
     $('#guessLetter').val('');
 });
 
+
 $("#restart").click(function() {
     $('#preStatus').text('');
     $('#status').text('');
