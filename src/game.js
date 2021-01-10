@@ -121,13 +121,16 @@ function updatedWord () {
     $('#word').text(answerArray.join(' '));
 }
 
+
 function hideFieldLetter () {
     $('#fieldLetter').hide();
 }
 
+
 function showRestartBtn () {
     $('#restart').show();
 }
+
 
 function showFailMessage () {
     hideFieldLetter();
@@ -135,11 +138,13 @@ function showFailMessage () {
     showRestartBtn();
 }
 
+
 function showWinMessage () {
     hideFieldLetter();
     $('#status').text('Excellent!\nYou won!\nThe word is ' + word + '!');
     showRestartBtn();
 }
+
 
 function writeFullWord () {
     for (let y = 0; y < word.length; y++) {
