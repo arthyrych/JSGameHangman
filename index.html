@@ -5,18 +5,20 @@
     <title>Hangman</title>
 </head>
 <body>
+
     <h1 id="header1">Hangman</h1>
     <h3 id='rules'>Rules: 1) There is a random animal 2) You need to guess all letters in the word 3) You're having 5 attempts</h3>
-    <p id='remainingAttempts'></p>
-    <p id='word'></p>
+    <p>Remaining attempts: <span id='remainingAttempts'></span></p>
+    <p>The word: <span id='word'></span></p>
 
-    <form action="/action_page.php">
+    <div id='fieldLetter'>
         <label for="gLetter">Guess letter:</label><br>
-        <input type="text" id="guessLetter" name="gLetter"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+        <input type="text" id="guessLetter"><br>
+        <button id='guessButton'>Send</button>
+    </div>
 
-    <p id='preStatus'></p>
+    <button id='restart' style="display: none;">Restart</button>
+
     <p id='status'></p>
 
 

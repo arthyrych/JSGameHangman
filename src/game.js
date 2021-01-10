@@ -1,38 +1,144 @@
-// get a random word from and array in container.js
-let word = getRdmWord();
+let word;
+let answerArray;
+let remainingLetters;
+let remainingAttempts;
 
 
-// converting answer to an array with underscores
-let answerArray = wordToUnderscores(word);
+function newGame () {
+    // get a random word from and array in container.js
+     word = getRdmWord();
+    // converting answer to an array with underscores
+     answerArray = [];
+    // setting the remaining letters
+     remainingLetters = word.length;
+    // setting remaining attempts
+     remainingAttempts = 5;
+    // just for debugging
+    console.log(word);
 
-
-// setting the remaining letters
-let remainingLetters = word.length;
-
-
-// setting remaining attempts
-let remainingAttempts = 5;
-
-
-// just for debugging
-console.log(word);
-console.log(answerArray);
-
-
-// the main function after setting all preconditions
-theMain(remainingLetters, remainingAttempts);
-
-
-// converting answer to underscores
-function wordToUnderscores(word) {
-    let answerArray = [];
+    // converting answer to underscores
     for (let y = 0; y < word.length; y++) {
         answerArray[y] = '_';
     }
-    return answerArray;
+
+    updateAttempts();
+    updatedWord();
 }
 
 
+newGame();
+
+
+$( "#guessButton" ).click(function() {
+    letterHandler($("#guessLetter").val());
+    // clear input
+    $('#guessLetter').val('');
+});
+
+$("#restart").click(function() {
+    $('#preStatus').text('');
+    $('#status').text('');
+    $('#restart').hide();
+    newGame();
+    $('#fieldLetter').show();
+});
+
+
+function letterHandler (newLetter) {
+
+    console.log(newLetter);
+
+    if (newLetter === '' || newLetter === null) {
+
+        alert('Please enter the only ONE letter.');
+        
+    } else if (newLetter.length !== 1) {
+
+        if (newLetter.toUpperCase() == word) {
+            showWinMessage();
+        } else {
+            alert('Please enter the only one letter or the entire word.');
+        }
+
+    } else {
+
+        // converting input to uppercase
+        newLetter = newLetter.toUpperCase();
+
+        //checking already guessed letters
+        let canContinue = answerArray.includes(newLetter);
+        if (canContinue) {
+            alert('You\'ve already entered this letter.');
+            return;
+        }
+
+        // var to consider if we need to subtract remaining attempts
+        let remainingAttemptsSkip = 0;
+
+        // checking if there is a char in the word-array and refreshing the status of the game
+        for (let j = 0; j < word.length; j++) {
+            if (word[j] === newLetter) {
+                answerArray[j] = newLetter;
+                remainingLetters--;
+
+                // preventing to subtract remaining attempts
+                remainingAttemptsSkip++;
+            }
+        }
+
+        // checking if the entered char is not in the word and subtracting remaining attempts
+        if (remainingAttemptsSkip < 1) {
+            remainingAttempts--;
+        }
+
+        updateAttempts();
+
+        if (remainingAttempts <= 0) {
+            showFailMessage();
+            return;
+        }
+
+        updatedWord();
+
+        // showing the answer and congrats
+        if (remainingLetters === 0) {
+            showWinMessage();
+        } 
+    }   
+}
+
+
+function updateAttempts () {
+    $('#remainingAttempts').text(remainingAttempts);
+}
+
+
+function updatedWord () {
+    $('#word').text(answerArray.join(' '));
+}
+
+function hideFieldLetter () {
+    $('#fieldLetter').hide();
+}
+
+function showRestartBtn () {
+    $('#restart').show();
+}
+
+function showFailMessage () {
+    hideFieldLetter();
+    $('#status').text('Unfortunately you have failed.\nThe word was: ' + word.toUpperCase() +
+    '. You\'re welcome to press F5 to start a new game.');
+    showRestartBtn();
+}
+
+function showWinMessage () {
+    hideFieldLetter();
+    $('#status').text('Excellent!\nYou won!\nThe word is ' + word + '!');
+    showRestartBtn();
+}
+
+/*
 // the main function once all preconditions are set
 function theMain (remainingLetters, remainingAttempts) {
 
@@ -46,8 +152,8 @@ function theMain (remainingLetters, remainingAttempts) {
         } else {
 
             // showing the status of the game
-            $('#remainingAttempts').text('Remaining attempts: ' + remainingAttempts);
-            $('#word').text('The word: ' + answerArray.join(' '));
+            $('#remainingAttempts').text(remainingAttempts);
+            $('#word').text(answerArray.join(' '));
 
             // asking for a letter
             let guess = prompt('Guess a letter or press \'Cancel\' to leave');
@@ -106,3 +212,4 @@ function theMain (remainingLetters, remainingAttempts) {
             '. You\'re welcome to press F5 to start a new game.');
     }
 }
+*/
