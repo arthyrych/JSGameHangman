@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Hangman</title>
 </head>
 <body>
 
-    <h1 id="header1">Hangman</h1>
+    <div id="headerDiv">
+        <h1 id='header'>Hangman</h1>
+    </div>
+
     <h3 id='rules'>Rules: 1) There is a random animal 2) You need to guess all letters in the word 3) You're having 5 attempts</h3>
     <p>Remaining attempts: <span id='remainingAttempts'></span></p>
     <p>The word: <span id='word'></span></p>
@@ -15,7 +18,7 @@
     <div id='fieldLetter'>
         <label for="gLetter">Guess letter:</label><br>
         <input type="text" id="guessLetter"><br>
-        <button id='guessButton'>Send</button>
+        <button class="guessButton" style="vertical-align:middle"'><span>Send</span></button>
     </div>
 
     <button id='restart' style="display: none;">Restart</button>
