@@ -1,18 +1,26 @@
-#header {
+.header {
     font-family: "Arial Black", sans-serif;
     letter-spacing: -1px;
     background-color: black;
     color: white;
-    padding: 16px 32px;
-    margin: 4px 2px;
+    padding: 15px;
+    margin: 15px;
     text-align: center;
     display: inline-block;
-
+    border-radius: 4px;
 }
 
-  p {
-    color: red;
-  }
+.rules {
+    font-family: "Arial Black", sans-serif;
+    letter-spacing: -1px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin: 15px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
 
 
   .guessButton {
@@ -23,11 +31,11 @@
     color: #FFFFFF;
     text-align: center;
     font-size: 28px;
-    padding: 20px;
-    width: 200px;
+    padding: 15px;
+    width: 150px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px;
+    margin: 15px;
   }
   
   .guessButton span {
@@ -54,3 +62,5 @@
     opacity: 1;
     right: 0;
   }
+
+
