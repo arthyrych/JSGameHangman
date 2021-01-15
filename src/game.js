@@ -1,6 +1,13 @@
+// a variable for storing a word
 let word;
+
+// an array with each letter
 let answerArray;
+
+// amount of remaining unguessed letters in the word
 let remainingLetters;
+
+// amount of remaining attempts
 let remainingAttempts;
 
 
