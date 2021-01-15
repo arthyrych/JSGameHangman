@@ -21,9 +21,52 @@
     border-radius: 4px;
 }
 
+.remainingAttempts {
+    font-family: "Arial Black", sans-serif;
+    letter-spacing: -1px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin: 15px;
+    display: inline-block;
+    border-radius: 4px;
+}
 
+.word {
+    font-family: "Arial Black", sans-serif;
+    letter-spacing: -1px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin: 15px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.label {
+    font-family: "Arial Black", sans-serif;
+    letter-spacing: -1px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin: 15px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.input {
+    font-family: "Arial Black", sans-serif;
+    letter-spacing: -1px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin: 15px;
+    display: inline-block;
+    border-radius: 4px;
+}
 
   .guessButton {
+    font-family: "Arial Black", sans-serif;
     display: inline-block;
     border-radius: 4px;
     background-color: #030303;
