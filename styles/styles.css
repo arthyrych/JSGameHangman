@@ -1,7 +1,7 @@
 .header {
     font-family: "Arial Black", sans-serif;
     letter-spacing: -1px;
-    background-color: black;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
     margin: 15px;
@@ -13,7 +13,7 @@
 .rules {
     font-family: "Arial Black", sans-serif;
     letter-spacing: -1px;
-    background-color: black;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
     margin: 15px;
@@ -24,7 +24,7 @@
 .remainingAttempts {
     font-family: "Arial Black", sans-serif;
     letter-spacing: -1px;
-    background-color: black;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
     margin: 15px;
@@ -35,13 +35,19 @@
 .word {
     font-family: "Arial Black", sans-serif;
     letter-spacing: -1px;
-    background-color: black;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
     margin: 15px;
     display: inline-block;
     border-radius: 4px;
 }
+
+#fieldLetter {
+  display: flex;
+  align-items: center;
+}
+
 
 .label {
     font-family: "Arial Black", sans-serif;
