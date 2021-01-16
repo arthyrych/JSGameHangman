@@ -9,7 +9,7 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 5px;
+    margin: 3px;
     text-align: center;
     display: inline-block;
     border-radius: 4px;
@@ -22,7 +22,7 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 5px;
+    margin: 3px;
     display: inline-block;
     border-radius: 4px;
 }
@@ -38,15 +38,16 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 5px;
+    margin: 3px;
     display: inline-block;
     border-radius: 4px;
+    text-align: center;
+    width: 200px;
 }
 
 #remainingAttempts {
   font-size: 300%;
   padding: 10px;
-  text-align: center;
 }
 
 .word {
@@ -55,7 +56,7 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 5px;
+    margin: 3px;
     display: inline-block;
     border-radius: 4px;
 }
@@ -76,9 +77,12 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 5px;
+    margin: 3px;
     display: inline-block;
     border-radius: 4px;
+    font-size: 28px;
+    width: 200px;
+    text-align: center;
 }
 
 .input {
@@ -88,18 +92,18 @@
     letter-spacing: -1px;
     background: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 8px;
-    margin: 5px;
+    padding: 13px;
+    margin: 3px;
     display: inline-block;
     border-radius: 4px;
-    font-size: 150%;
+    font-size: 28px;
 }
 
-  .guessButton {
+  #guessButton {
     font-family: "Arial Black", sans-serif;
     display: inline-block;
     border-radius: 4px;
-    background-color: #030303;
+    background: rgba(0, 0, 0, 0.8);
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -108,17 +112,17 @@
     width: 150px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 15px;
+    margin: 3px;
   }
   
-  .guessButton span {
+  #guessButton span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
   }
   
-  .guessButton span:after {
+  #guessButton span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -127,11 +131,11 @@
     transition: 0.5s;
   }
   
-  .guessButton:hover span {
+  #guessButton:hover span {
     padding-right: 25px;
   }
   
-  .guessButton:hover span:after {
+  #guessButton:hover span:after {
     opacity: 1;
     right: 0;
   }
