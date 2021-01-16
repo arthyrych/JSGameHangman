@@ -7,40 +7,54 @@
 </head>
 <body>
 
-    <div class="headerDiv">
-        <h1 class='header'>Hangman</h1>
-    </div>
+    <div class="headerAndRules">
 
-
-    <div class="rulesDiv">
-        <h3 class='rules'>Rules:<br>1) There is a random animal<br>2) You need to guess all letters in the word<br>3) You're having 5 attempts</h3>
-    </div>
-
-
-    <div class="remainingAttemptsDiv">
-        <p class="remainingAttempts">Remaining attempts: <span id='remainingAttempts'></span></p>
-    </div>
+        <div class="headerDiv">
+            <h1 class='header'>Hangman</h1>
+        </div>
     
+    
+        <div class="rulesDiv">
+            <h3 class='rules'>Rules:<br>1) There is a random animal<br>2) You need to guess all letters in the word<br>3) You're having 5 attempts</h3>
+        </div>
 
-    <div class="wordDiv">
-        <p class="word">The word: <span id='word'></span></p>
+    </div>
+
+
+    <div class="remainingAndWord">
+
+        <div class="remainingAttemptsDiv">
+            <p class="remainingAttempts">Remaining attempts:<br><span id='remainingAttempts'></span></p>
+        </div>
+        
+    
+        <div class="wordDiv">
+            <p class="word">The word:<br><span id='word'></span></p>
+        </div>
+
     </div>
 
 
     <div id='fieldLetter'>
+
         <label class="label" for="gLetter">Guess letter:</label><br>
         <input class="input" type="text" id="guessLetter"><br>
         <button id="guessButton" style="vertical-align:middle"'><span>Send</span></button>
+
     </div>
 
 
     <div class="restartDiv">
+
         <button id='restart' style="display: none;">Restart</button>
+
     </div>
 
 
     <div class="status">
+
         <p id='status'></p>
+        
     </div>
 
 

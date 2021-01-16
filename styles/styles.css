@@ -1,3 +1,8 @@
+.headerAndRules {
+  display: flex;
+  align-items: center;
+}
+
 .header {
     font-family: "Arial Black", sans-serif;
     letter-spacing: -1px;
@@ -8,6 +13,7 @@
     text-align: center;
     display: inline-block;
     border-radius: 4px;
+    font-size: 76px;
 }
 
 .rules {
@@ -21,6 +27,11 @@
     border-radius: 4px;
 }
 
+.remainingAndWord {
+  display: flex;
+  align-items: center;
+}
+
 .remainingAttempts {
     font-family: "Arial Black", sans-serif;
     letter-spacing: -1px;
@@ -32,6 +43,12 @@
     border-radius: 4px;
 }
 
+#remainingAttempts {
+  font-size: 300%;
+  padding: 10px;
+  text-align: center;
+}
+
 .word {
     font-family: "Arial Black", sans-serif;
     letter-spacing: -1px;
@@ -41,6 +58,10 @@
     margin: 5px;
     display: inline-block;
     border-radius: 4px;
+}
+
+#word {
+  font-size: 300%;
 }
 
 #fieldLetter {
@@ -67,10 +88,11 @@
     letter-spacing: -1px;
     background: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 15px;
+    padding: 8px;
     margin: 5px;
     display: inline-block;
     border-radius: 4px;
+    font-size: 150%;
 }
 
   .guessButton {
