@@ -4,7 +4,7 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 15px;
+    margin: 5px;
     text-align: center;
     display: inline-block;
     border-radius: 4px;
@@ -16,7 +16,7 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 15px;
+    margin: 5px;
     display: inline-block;
     border-radius: 4px;
 }
@@ -27,7 +27,7 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 15px;
+    margin: 5px;
     display: inline-block;
     border-radius: 4px;
 }
@@ -38,7 +38,7 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 15px;
+    margin: 5px;
     display: inline-block;
     border-radius: 4px;
 }
@@ -52,21 +52,23 @@
 .label {
     font-family: "Arial Black", sans-serif;
     letter-spacing: -1px;
-    background-color: black;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 15px;
+    margin: 5px;
     display: inline-block;
     border-radius: 4px;
 }
 
-.inputt {
+.input {
     font-family: "Arial Black", sans-serif;
+    text-align: center;
+    width: 100px;
     letter-spacing: -1px;
-    background-color: black;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    margin: 15px;
+    margin: 5px;
     display: inline-block;
     border-radius: 4px;
 }
