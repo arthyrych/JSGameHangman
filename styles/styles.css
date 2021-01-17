@@ -145,6 +145,20 @@
     align-items: center;
   }  
 
+  #status {
+    font-family: "Arial Black", sans-serif;
+    letter-spacing: -1px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    margin: 3px;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 28px;
+    width: 200px;
+    text-align: center;
+}
+
   #restart {
     font-family: "Arial Black", sans-serif;
     display: inline-block;
@@ -185,3 +199,4 @@
     opacity: 1;
     right: 0;
   }
+

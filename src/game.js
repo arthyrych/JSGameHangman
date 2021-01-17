@@ -141,14 +141,14 @@ function showRestartBtn () {
 
 function showFailMessage () {
     hideFieldLetter();
-    $('#status').text('Unfortunately you have failed.\nThe word was: ' + word.toUpperCase() + '.');
+    $('#status').text('Game over');
     showRestartBtn();
 }
 
 
 function showWinMessage () {
     hideFieldLetter();
-    $('#status').text('Excellent!\nYou won!\nThe word is ' + word + '!');
+    $('#status').text('Win!');
     showRestartBtn();
 }
 
