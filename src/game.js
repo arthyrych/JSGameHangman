@@ -12,14 +12,19 @@ let remainingAttempts;
 
 
 function newGame () {
+
     // get a random word from and array in container.js
      word = getRdmWord();
+
     // converting answer to an array with underscores
      answerArray = [];
+
     // setting the remaining letters
      remainingLetters = word.length;
+
     // setting remaining attempts
      remainingAttempts = 5;
+
     // just for debugging
     console.log(word);
 
@@ -28,14 +33,17 @@ function newGame () {
         answerArray[y] = '_';
     }
 
+    // updating attempts
     updateAttempts();
+    // updating the word
     updatedWord();
 }
 
-
+// starting a new game
 newGame();
 
 
+// input button handler
 $("#guessButton").click(function() {
     letterHandler($("#guessLetter").val());
     // clear input
@@ -43,6 +51,7 @@ $("#guessButton").click(function() {
 });
 
 
+// restart button handler
 $("#restart").click(function() {
     $('#preStatus').text('');
     $('#status').text('');
@@ -52,14 +61,17 @@ $("#restart").click(function() {
 });
 
 
+// function to handle the inserted letter or the word
 function letterHandler (newLetter) {
 
+    // for debugging
     console.log(newLetter);
 
+    // check if the one letter was entered
     if (newLetter === '' || newLetter === null) {
-
         alert('Please enter the only ONE letter.');
-        
+
+    // check if the correct word was entered
     } else if (newLetter.length !== 1) {
 
         if (newLetter.toUpperCase() == word) {
@@ -69,6 +81,7 @@ function letterHandler (newLetter) {
             alert('Please enter the only one letter or the correct entire word.');
         }
 
+    // taking a letter
     } else {
 
         // converting input to uppercase
