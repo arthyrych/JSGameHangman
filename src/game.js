@@ -58,7 +58,8 @@ $("#guessButton").click(function() {
 // restart button handler
 $("#restart").click(function() {
 
-    // $('#preStatus').text(''); should be deleted
+    // hiding statusDiv once restart button is clicked
+    hideStatusDiv();
 
     // clearing status message and hiding the restart button after the restart button is clicked
     $('#status').text('');
@@ -172,9 +173,20 @@ function showRestartBtn () {
 }
 
 
+function showStatusDiv () {
+    $('#status').show();
+}
+
+
+function hideStatusDiv () {
+    $('#status').hide();
+}
+
+
 function showFailMessage () {
     hideFieldLetter();
     $('#status').text('Game over');
+    showStatusDiv();
     showRestartBtn();
 }
 
@@ -182,6 +194,7 @@ function showFailMessage () {
 function showWinMessage () {
     hideFieldLetter();
     $('#status').text('Win!');
+    showStatusDiv();
     showRestartBtn();
 }
 
