@@ -11,84 +11,100 @@ let remainingLetters;
 let remainingAttempts;
 
 
-function newGame () {
-
-    // get a random word from and array in container.js
-     word = getRdmWord();
-
-    // converting answer to an array with underscores
-     answerArray = [];
-
-    // setting the remaining letters
-     remainingLetters = word.length;
-
-    // setting remaining attempts
-     remainingAttempts = 5;
-
-    // just for debugging
-    console.log(word);
-
-    // converting answer to underscores
-    for (let y = 0; y < word.length; y++) {
-        answerArray[y] = '_';
-    }
-
-    // updating attempts
-    updateAttempts();
-    // updating the word
-    updatedWord();
-}
-
 // starting a new game
 newGame();
 
 
-// input button handler
+function newGame () {
+
+    // get a random word from and array in container.js
+    word = getRdmWord();
+
+    // making our answerArray var as an array for storing letters
+    answerArray = [];
+
+    // setting remaining letters depending on the word's length
+    remainingLetters = word.length;
+
+    // setting remaining attempts
+    remainingAttempts = 5;
+
+    // just for debugging (showing the picked word in console)
+    console.log(word);
+
+    // converting answerArray to underscores depending on the word's length
+    for (let y = 0; y < word.length; y++) {
+        answerArray[y] = '_';
+    }
+
+    // updating amount of the remaining attempts on html
+    updateAttempts();
+    // updating the word (underscores in answerArray => letters of the word)
+    updatedWord();
+}
+
+
+// input button handler (sending the input into the letterHandler function)
 $("#guessButton").click(function() {
+
+    // on click the input goes into letterHandler function
     letterHandler($("#guessLetter").val());
-    // clear input
+
+    // clear input once it was sent
     $('#guessLetter').val('');
 });
 
 
 // restart button handler
 $("#restart").click(function() {
-    $('#preStatus').text('');
+
+    // $('#preStatus').text(''); should be deleted
+
+    // clearing status message and hiding the restart button after the restart button is clicked
     $('#status').text('');
     $('#restart').hide();
+
+    // starting a new game (picking a new word and setting remaining attempts)
     newGame();
+
+    // showing back block with the input
     $('#fieldLetter').show();
 });
 
 
-// function to handle the inserted letter or the word
+// handling the inserted letter or the word
 function letterHandler (newLetter) {
 
-    // for debugging
+    // for debugging (showing what was inserted in console)
     console.log(newLetter);
 
     // check if the one letter was entered
     if (newLetter === '' || newLetter === null) {
-        alert('Please enter the only ONE letter.');
+        alert('Please enter at least one letter or the correct entire word.');
 
-    // check if the correct word was entered
+    // check if the input == word's length
     } else if (newLetter.length !== 1) {
 
+        // the player winning if inserted the correct entire word
         if (newLetter.toUpperCase() == word) {
+
+            // win message + showing the word
             writeFullWord();
             showWinMessage();
+
         } else {
             alert('Please enter the only one letter or the correct entire word.');
         }
 
-    // taking a letter
+    // taking the inserted letter
     } else {
 
         // converting input to uppercase
         newLetter = newLetter.toUpperCase();
 
-        //checking already guessed letters
+        // checking if the entered letter was already guessed
         let canContinue = answerArray.includes(newLetter);
+
         if (canContinue) {
             alert('You\'ve already entered this letter.');
             return;
@@ -113,14 +129,18 @@ function letterHandler (newLetter) {
             remainingAttempts--;
         }
 
+        // updating remaining attempts on the html
         updateAttempts();
 
+
+        // showing game over + the word if no remaining attempts left
         if (remainingAttempts <= 0) {
             writeFullWord();
             showFailMessage();
             return;
         }
 
+        // updating underscores to letters
         updatedWord();
 
         // showing the answer and congrats
