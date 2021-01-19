@@ -200,3 +200,12 @@
     right: 0;
   }
 
+.canvas {
+  background: rgba(0, 0, 0, 0.8);
+  width: 465px;
+  height: 465px;
+  margin: 3px;
+  border-radius: 4px;
+
+
+}

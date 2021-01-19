@@ -10,6 +10,10 @@ let remainingLetters;
 // amount of remaining attempts
 let remainingAttempts;
 
+// setting our canvas
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
+
 
 // starting a new game
 newGame();
@@ -133,6 +137,8 @@ function letterHandler (newLetter) {
         // updating remaining attempts on the html
         updateAttempts();
 
+        // drawing on canvas the status
+        hangmanDrawing(remainingAttempts);
 
         // showing game over + the word if no remaining attempts left
         if (remainingAttempts <= 0) {
@@ -205,4 +211,40 @@ function writeFullWord () {
     }
 
     updatedWord();
+}
+
+function hangmanDrawing (attempts) {
+        //drawing black stickman with lines
+        // selecting styles
+        ctx.strokeStyle = 'White';
+        ctx.lineWidth = 4;
+
+        // head with rectange
+        ctx.strokeRect(225, 10, 20, 20);
+
+        // method to begin drawing lines
+        ctx.beginPath();
+
+        // body
+        ctx.moveTo(310, 30);
+        ctx.lineTo(310, 70);
+
+        // left hand
+        ctx.moveTo(290, 40);
+        ctx.lineTo(310, 45);
+
+        // right hand
+        ctx.moveTo(330, 40);
+        ctx.lineTo(310, 45);
+
+        // left leg
+        ctx.moveTo(310, 70);
+        ctx.lineTo(290, 95);
+
+        // right leg
+        ctx.moveTo(310, 70);
+        ctx.lineTo(330, 95);        
+
+        // method to draw
+        ctx.stroke();
 }
