@@ -217,33 +217,47 @@ function hangmanDrawing (attempts) {
         //drawing black stickman with lines
         // selecting styles
         ctx.strokeStyle = 'White';
-        ctx.lineWidth = 4;
+        ctx.lineWidth = 10;
 
-        // head with rectange
-        ctx.strokeRect(225, 10, 20, 20);
+        circle(232, 100, 80)
+
 
         // method to begin drawing lines
         ctx.beginPath();
 
         // body
-        ctx.moveTo(310, 30);
-        ctx.lineTo(310, 70);
-
-        // left hand
-        ctx.moveTo(290, 40);
-        ctx.lineTo(310, 45);
-
-        // right hand
-        ctx.moveTo(330, 40);
-        ctx.lineTo(310, 45);
+        ctx.moveTo(232, 180);
+        ctx.lineTo(232, 320);
 
         // left leg
-        ctx.moveTo(310, 70);
-        ctx.lineTo(290, 95);
+        ctx.moveTo(232, 320);
+        ctx.lineTo(182, 440);
 
         // right leg
-        ctx.moveTo(310, 70);
-        ctx.lineTo(330, 95);        
+        ctx.moveTo(232, 320);
+        ctx.lineTo(282, 440);  
+
+        // left hand
+        ctx.moveTo(152, 210);
+        ctx.lineTo(232, 250);
+
+        // right hand
+        ctx.moveTo(312, 210);
+        ctx.lineTo(232, 250);
+
+        // left eye
+        ctx.moveTo(10, 10);
+        ctx.lineTo(60, 60);
+
+        ctx.moveTo(60, 10);
+        ctx.lineTo(10, 60);
+        
+        // right eye
+        ctx.moveTo(10, 10);
+        ctx.lineTo(60, 60);
+
+        ctx.moveTo(60, 10);
+        ctx.lineTo(10, 60);        
 
         // method to draw
         ctx.stroke();
