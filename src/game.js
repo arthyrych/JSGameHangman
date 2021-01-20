@@ -21,6 +21,9 @@ newGame();
 
 function newGame () {
 
+    // clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     // get a random word from and array in container.js
     word = getRdmWord();
 
@@ -214,52 +217,69 @@ function writeFullWord () {
 }
 
 function hangmanDrawing (attempts) {
-        //drawing black stickman with lines
+
         // selecting styles
         ctx.strokeStyle = 'White';
+        ctx.fillStyle = 'White';
         ctx.lineWidth = 10;
-
-        circle(232, 100, 80)
-
 
         // method to begin drawing lines
         ctx.beginPath();
 
-        // body
-        ctx.moveTo(232, 180);
-        ctx.lineTo(232, 320);
+        if (attempts == 4) {
 
-        // left leg
-        ctx.moveTo(232, 320);
-        ctx.lineTo(182, 440);
+            // head
+            circle(232, 100, 80);
 
-        // right leg
-        ctx.moveTo(232, 320);
-        ctx.lineTo(282, 440);  
+        } else if (attempts == 3) {
 
-        // left hand
-        ctx.moveTo(152, 210);
-        ctx.lineTo(232, 250);
+            // body
+            ctx.moveTo(232, 180);
+            ctx.lineTo(232, 320);
 
-        // right hand
-        ctx.moveTo(312, 210);
-        ctx.lineTo(232, 250);
+        } else if (attempts == 2) {
 
-        // left eye
-        ctx.moveTo(10, 10);
-        ctx.lineTo(60, 60);
+            // left leg
+            ctx.moveTo(232, 320);
+            ctx.lineTo(182, 440);
 
-        ctx.moveTo(60, 10);
-        ctx.lineTo(10, 60);
+            // right leg
+            ctx.moveTo(232, 320);
+            ctx.lineTo(282, 440);  
+
+        } else if (attempts == 1) {
+
+            // left hand
+            ctx.moveTo(152, 210);
+            ctx.lineTo(232, 250);
+
+            // right hand
+            ctx.moveTo(312, 210);
+            ctx.lineTo(232, 250);
+
+        } else if (attempts <= 0) {
+
+            // mouth
+            circle(232, 140, 10, true);
+
+            // left eye
+            ctx.moveTo(182, 70);
+            ctx.lineTo(212, 100);
+
+            ctx.moveTo(212, 70);
+            ctx.lineTo(182, 100);    
+            
+            // right eye
+            ctx.moveTo(282, 70);
+            ctx.lineTo(252, 100);
+
+            ctx.moveTo(252, 70);
+            ctx.lineTo(282, 100);
+
+        } 
         
-        // right eye
-        ctx.moveTo(10, 10);
-        ctx.lineTo(60, 60);
 
-        ctx.moveTo(60, 10);
-        ctx.lineTo(10, 60);        
-
-        // method to draw
+        // method to draw lines
         ctx.stroke();
 }
 
