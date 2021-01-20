@@ -248,3 +248,14 @@ function hangmanDrawing (attempts) {
         // method to draw
         ctx.stroke();
 }
+
+// dwaring circle function
+function circle (x, y, r, fillCircle) {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2, false);
+    if (fillCircle) {
+        ctx.fill();
+    } else {
+        ctx.stroke();
+    }
+};
