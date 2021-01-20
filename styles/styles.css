@@ -206,6 +206,17 @@
   height: 465px;
   margin: 3px;
   border-radius: 4px;
+}
 
-
+.push {
+  font-family: "Arial Black", sans-serif;
+  position: fixed;
+  bottom: 5px;
+  left: 10px;
+  padding: 14px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: none;
 }

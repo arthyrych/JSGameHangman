@@ -14,6 +14,13 @@ let remainingAttempts;
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
 
+// click counter for push 
+let clicksForPush = 0;
+
+// vars for considering which push to show
+let remainingAttemptsBefore;
+let remainingAttemptsAfter;
+
 
 // starting a new game
 newGame();
@@ -54,11 +61,26 @@ function newGame () {
 // input button handler (sending the input into the letterHandler function)
 $("#guessButton").click(function() {
 
+    // setting remaining attempts before letter handler
+    remainingAttemptsBefore = remainingAttempts;
+
     // on click the input goes into letterHandler function
     letterHandler($("#guessLetter").val());
 
     // clear input once it was sent
     $('#guessLetter').val('');
+
+    // setting remaining attempts after letter handler
+    remainingAttemptsAfter = remainingAttempts;
+
+    // showing push
+    clicksForPush++;
+
+    if (remainingAttemptsBefore == remainingAttemptsAfter) {
+        $('.push').text('Good!').fadeIn(100, pushAfter);
+    } else {
+        $('.push').text('Shit!').fadeIn(100, pushAfter);
+    }
 });
 
 
@@ -292,4 +314,13 @@ function circle (x, y, r, fillCircle) {
     } else {
         ctx.stroke();
     }
-};
+}
+
+// push function
+function pushAfter () {
+    setTimeout(() => {
+        clicksForPush--;
+        if (clicksForPush <= 0) 
+            $('.push').fadeOut(100);
+    }, 2000);
+}
