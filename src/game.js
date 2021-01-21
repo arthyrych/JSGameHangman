@@ -17,10 +17,6 @@ let ctx = canvas.getContext('2d');
 // click counter for push 
 let clicksForPush = 0;
 
-// vars for considering which push to show
-let remainingAttemptsBefore;
-let remainingAttemptsAfter;
-
 
 // starting a new game
 newGame();
@@ -61,26 +57,12 @@ function newGame () {
 // input button handler (sending the input into the letterHandler function)
 $("#guessButton").click(function() {
 
-    // setting remaining attempts before letter handler
-    remainingAttemptsBefore = remainingAttempts;
-
     // on click the input goes into letterHandler function
     letterHandler($("#guessLetter").val());
 
     // clear input once it was sent
     $('#guessLetter').val('');
 
-    // setting remaining attempts after letter handler
-    remainingAttemptsAfter = remainingAttempts;
-
-    // showing push
-    clicksForPush++;
-
-    if (remainingAttemptsBefore == remainingAttemptsAfter) {
-        $('.push').text('Good!').fadeIn(100, pushAfter);
-    } else {
-        $('.push').text('Shit!').fadeIn(100, pushAfter);
-    }
 });
 
 
@@ -157,6 +139,10 @@ function letterHandler (newLetter) {
         // checking if the entered char is not in the word and subtracting remaining attempts
         if (remainingAttemptsSkip < 1) {
             remainingAttempts--;
+
+            // showing push
+            clicksForPush++;
+            $('.push').text('Shit!').fadeIn(100, pushAfter);
         }
 
         // updating remaining attempts on the html
@@ -324,10 +310,9 @@ function pushAfter () {
     setTimeout(() => {
         clicksForPush--;
         if (clicksForPush <= 0) 
-            $('.push').fadeOut(100);
-    }, 2000);
+            $('.push').fadeOut(500);
+    }, 500);
 }
-
 
 
 // code below to send a letter with pressing the Enter button instead of clicking
