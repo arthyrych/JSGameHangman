@@ -238,6 +238,7 @@ function writeFullWord () {
     updatedWord();
 }
 
+
 function hangmanDrawing (attempts) {
 
         // selecting styles
@@ -305,6 +306,7 @@ function hangmanDrawing (attempts) {
         ctx.stroke();
 }
 
+
 // dwaring circle function
 function circle (x, y, r, fillCircle) {
     ctx.beginPath();
@@ -316,6 +318,7 @@ function circle (x, y, r, fillCircle) {
     }
 }
 
+
 // push function
 function pushAfter () {
     setTimeout(() => {
@@ -324,3 +327,20 @@ function pushAfter () {
             $('.push').fadeOut(100);
     }, 2000);
 }
+
+
+
+// code below to send a letter with pressing the Enter button instead of clicking
+// get the input field
+let input = document.getElementById("guessLetter");
+
+// execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // number 13 is the Enter key on the keyboard
+  if (event.keyCode === 13) {
+    // cancel the default action, if needed
+    event.preventDefault();
+    // trigger the button element with a click
+    document.getElementById("guessButton").click();
+  }
+});
