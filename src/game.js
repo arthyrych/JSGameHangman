@@ -142,7 +142,7 @@ function letterHandler (newLetter) {
 
             // showing push
             clicksForPush++;
-            $('.push').text('Shit!').fadeIn(100, pushAfter);
+            $('.push').text(getRdmFail()).fadeIn(100, pushAfter);
         }
 
         // updating remaining attempts on the html

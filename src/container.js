@@ -1,5 +1,6 @@
-// choosing a random word
+// function returning a random word
 function getRdmWord() {
+
     // an array with all available words
     let words = [
         "Aardvark",
@@ -224,5 +225,32 @@ function getRdmWord() {
         "Yak",
         "Zebra"
     ];
+
+    // picking a random word from this array
     return words[Math.floor(Math.random() * words.length)].toUpperCase();
+
+}
+
+
+// function returning a random fail
+function getRdmFail() {
+
+    // an array with all available fails
+    let fails = [
+        "Shit!",
+        "Oh, no!",
+        "You are going to kill me!",
+        "Please stop!",
+        "I'm scared",
+        "Leave me!",
+        "You are terrible!",
+        "Bastard!",
+        "Don't do that!",
+        "I beg you! Please stop!",
+        "I'm going to die..."
+    ];
+
+    // picking a random word from this array
+    return fails[Math.floor(Math.random() * fails.length)];
+
 }
