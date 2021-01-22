@@ -247,7 +247,13 @@ function getRdmFail() {
         "Bastard!",
         "Don't do that!",
         "I beg you! Please stop!",
-        "I'm going to die..."
+        "I'm going to die...",
+        "You're horrible!",
+        "Okay, I lived a nice live...",
+        "No more mistakes!",
+        "Will I die?",
+        "Stop kidding!",
+        "Aghhhh!"
     ];
 
     // picking a random word from this array
