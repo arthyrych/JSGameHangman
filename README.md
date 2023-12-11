@@ -1,1 +1,1 @@
-# Open the game here: https://arthyrych.github.io/gameHangman/
+# Open the game here: https://arthyrych.github.io/JSGameHangman
